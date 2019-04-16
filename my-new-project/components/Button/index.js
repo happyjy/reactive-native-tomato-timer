@@ -8,7 +8,7 @@ function Button ({ iconName, onPress }){
     <TouchableOpacity onPressOut={onPress}>
       <FontAwesome name={iconName} size={80} color="white" />
     </TouchableOpacity>
-  );
+  ); 
 }
 
 Button.propTypes = {
