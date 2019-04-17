@@ -1,22 +1,27 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Timer from './components/Timer';
-import reducer from './reducer';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import reducer from "./reducer";
+import Timer from "./components/Timer";
 
 let store = createStore(reducer);
 
-console.log(store)
+console.log("### THIS IS STORE OBJECT");
+console.log(store.getState());
+console.log(store);
+
 export default class App extends React.Component {
   render() {
     return (
-      <Provider store={store}>
-        <Timer></Timer>
+      //이 뜻은 timer가 store와 연결 된다라는 의미
+      <Provider store={store}>  
+        <Timer />
       </Provider>
-    )
+    );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {

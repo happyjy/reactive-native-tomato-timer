@@ -19,7 +19,6 @@
 // Import
 
 // Actions
-
 const START_TIMER = "START_TIMER";
 const PAUSE_TIMER = "PAUSE_TIMER";
 const RESUME_TIMER = "RESUME_TIMER";
@@ -28,41 +27,42 @@ const ADD_SECOND = "ADD_SECOND";
 
 // Action Creators
 
-function startTimer(){
-  return{
+function startTimer() {
+  return {
     type: START_TIMER
-  }
+  };
 }
 
-function pauseTimer(){
-  return{
+function pauseTimer() {
+  return {
     type: PAUSE_TIMER
-  }
+  };
 }
 
-function restartTimer(){
-  return{
+function restartTimer() {
+  return {
     type: RESTART_TIMER
-  }
+  };
 }
 
-function addSecond(){
-  return{
+function addSecond() {
+  return {
     type: ADD_SECOND
-  }
+  };
 }
 
 // Reducer
+
 const TIMER_DURATION = 1500;
 
-const intialState = {
+const initialState = {
   isPlaying: false,
   elapsedTime: 0,
   timerDuration: TIMER_DURATION
-}
+};
 
-function reducer(state = initialState, action){
-  switch (action.type){
+function reducer(state = initialState, action) {
+  switch (action.type) {
     case START_TIMER:
       return applyStartTimer(state, action);
     case PAUSE_TIMER:
@@ -79,44 +79,45 @@ function reducer(state = initialState, action){
 }
 
 // Reducer Functions
-function applyStartTimer(state, action){
-  return{
+
+function applyStartTimer(state, action) {
+  return {
     ...state,
     isPlaying: true,
     elapsedTime: 0
   };
 }
 
-function applyPauseTimer(state, action){
-  return{
+function applyPauseTimer(state, action) {
+  return {
     ...state,
-    isPlaying: false,
+    isPlaying: false
   };
 }
 
-function applyResumeTimer(state, action){
-  return{
+function applyResumeTimer(state, action) {
+  return {
     ...state,
     isPlaying: true
   };
 }
 
-function applyStopTimer(state, action){
-  return{
+function applyStopTimer(state, action) {
+  return {
     ...state,
     isPlaying: false,
     elapsedTime: 0
   };
 }
 
-function applyAddSecond(state, action){
+function applyAddSecond(state, action) {
   const { elapsedTime } = state;
-  if(elapsedTime < TIMER_DURATION){
-    return{
+  if (elapsedTime < TIMER_DURATION) {
+    return {
       ...state,
       elapsedTime: elapsedTime + 1
     };
-  }else{
+  } else {
     return {
       ...state,
       isPlaying: false
@@ -124,18 +125,15 @@ function applyAddSecond(state, action){
   }
 }
 
-// Export Action Creators
+// Exports
 
 const actionCreators = {
   startTimer,
-  pasuseTimer, 
+  pauseTimer,
   restartTimer,
-  addSecond,
-}
-
-export { actionsCreators };
-
+  addSecond
+};
 
 // Default
-export default reducer;
 
+export default reducer;
