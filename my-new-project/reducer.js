@@ -10,7 +10,7 @@
 // Reducer 
 // Reducer Functions
 
-// Export Creator Actions
+// Export ActionCreators
 // default
 
 
@@ -20,22 +20,13 @@
 
 // Actions
 const START_TIMER = "START_TIMER";
-const PAUSE_TIMER = "PAUSE_TIMER";
-const RESUME_TIMER = "RESUME_TIMER";
-const STOP_TIMER = "STOP_TIMER";
+const RESTART_TIMER = "RESTART_TIMER";
 const ADD_SECOND = "ADD_SECOND";
 
 // Action Creators
-
 function startTimer() {
   return {
     type: START_TIMER
-  };
-}
-
-function pauseTimer() {
-  return {
-    type: PAUSE_TIMER
   };
 }
 
@@ -44,7 +35,7 @@ function restartTimer() {
     type: RESTART_TIMER
   };
 }
-
+ 
 function addSecond() {
   return {
     type: ADD_SECOND
@@ -52,7 +43,6 @@ function addSecond() {
 }
 
 // Reducer
-
 const TIMER_DURATION = 1500;
 
 const initialState = {
@@ -65,12 +55,8 @@ function reducer(state = initialState, action) {
   switch (action.type) {
     case START_TIMER:
       return applyStartTimer(state, action);
-    case PAUSE_TIMER:
-      return applyPauseTimer(state, action);
-    case RESUME_TIMER:
-      return applyResumeTimer(state, action);
-    case STOP_TIMER:
-      return applyStopTimer(state, action);
+    case RESTART_TIMER:
+      return applyRestartTimer(state, action);
     case ADD_SECOND:
       return applyAddSecond(state, action);
     default:
@@ -79,7 +65,6 @@ function reducer(state = initialState, action) {
 }
 
 // Reducer Functions
-
 function applyStartTimer(state, action) {
   return {
     ...state,
@@ -88,21 +73,7 @@ function applyStartTimer(state, action) {
   };
 }
 
-function applyPauseTimer(state, action) {
-  return {
-    ...state,
-    isPlaying: false
-  };
-}
-
-function applyResumeTimer(state, action) {
-  return {
-    ...state,
-    isPlaying: true
-  };
-}
-
-function applyStopTimer(state, action) {
+function applyRestartTimer(state, action) {
   return {
     ...state,
     isPlaying: false,
@@ -125,15 +96,13 @@ function applyAddSecond(state, action) {
   }
 }
 
-// Exports
-
+// Exports Action Creators
 const actionCreators = {
   startTimer,
-  pauseTimer,
   restartTimer,
   addSecond
 };
+export { actionCreators };
 
 // Default
-
 export default reducer;

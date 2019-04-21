@@ -3,11 +3,7 @@
 
 * reference 
 https://academy.nomadcoders.co/courses/enrolled/235420
-
-
-
 # project 어떻게 만드는지 확인해야함
-
 
 
 # expo 설치 
@@ -21,5 +17,7 @@ yarn start --ios를 수행하니 simulator가 정상적으로 동작~~ : )
 
 
 * my-new-timer folder에서 expo start --ios ! 해줘야 아래 같이 나옴
+* 코드 수정후 simulator에서 확하고 싶을 경우 simulator 앱에서 command + r로 새로고침해준다.
+- 가끔 수정이 안될경우 termianl에서 expo를 다시 실해주니 문제가 해결 됨.
 
 

@@ -6,7 +6,12 @@ class Timer extends Component {
   render(){
     console.log("### PRESENTER> THIS.PROPS"); 
     console.log(this.props);
-    const { isPlaying, elapsedTime, timerDuration } = this.props;
+    const { isPlaying, 
+      lapsedTime,
+      timerDuration,
+      startTimer,
+      restartTimer
+    } = this.props;
     return (
       <View style={styles.container}>
         <StatusBar barStyle={"light-content"} />
@@ -15,10 +20,11 @@ class Timer extends Component {
         </View>
         <View style={styles.lower}>
           {!isPlaying && (
-            <Button iconName="play-circle" onPress={ () => alert("this is play") }/>
+            // <Button iconName="play-circle" onPress={ () => alert("this is play") }/>
+            <Button iconName="play-circle" onPress={ startTimer }/>
           )}
           {isPlaying && (
-            <Button iconName="stop-circle" onPress={ () => alert("this is stop") }/>
+            <Button iconName="stop-circle" onPress={ restartTimer }/>
           )}
         </View>
       </View>
