@@ -1,10 +1,10 @@
 {
-  "devToolsPort": 19002,
+  "devToolsPort": 19003,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 87864,
+  "packagerPid": 4910,
   "expoServerNgrokUrl": "https://ne-swz.anonymous.my-new-project.exp.direct",
   "packagerNgrokUrl": "https://packager.ne-swz.anonymous.my-new-project.exp.direct",
-  "ngrokPid": 87886,
+  "ngrokPid": 4932,
   "webpackServerPort": null
 }

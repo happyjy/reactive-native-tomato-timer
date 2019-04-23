@@ -28,7 +28,8 @@ function mapsDispatchToProps(dispatch){
     //key: props 이름(apps.js > this.props 객체에서 확인 할 수 있다.)
     //value: reducer 이름
     startTimer: bindActionCreators(tomatoActions.startTimer, dispatch),
-    restartTimer: bindActionCreators(tomatoActions.restartTimer, dispatch)
+    restartTimer: bindActionCreators(tomatoActions.restartTimer, dispatch),
+    addSecond: bindActionCreators(tomatoActions.addSecond, dispatch)
   }
 }
 
